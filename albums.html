@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-image: url("Ben&Ben BG.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 1600px;
+            overflow: auto;
+        }
+
+      
+        .nav{
+            background-color: rgba(152,147,21,0.819);
+            width: 1000px;
+            margin: 30px auto;
+            border-radius: 90px;
+            text-align: center;
+            box-shadow: 0px 8px 18px rgba(0,0,0,0.5);
+        }
+
+        .nav a{
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            width: 140px;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-family: "Libre Baskerville", serif;
+            font-size: 16px;
+        }
+
+        
+        .pic1, .pic2, .pic3{
+            width:450px;
+            position:absolute;
+            left:60px;
+            cursor:pointer;
+            box-shadow:0px 8px 18px rgba(0,0,0,1);
+        }
+
+        .pic1{
+            top:180px;
+        }
+
+        .pic2{
+            top:820px;
+        }
+
+        .pic3{
+            top:1500px;
+        }
+
+        
+        .pic1text, .pic2text, .pic3text{
+            position:absolute;
+            left:155px;
+            width:250px;
+            text-align:center;
+            font-family:"Libre Baskerville", serif;
+            font-size:20px;
+            text-shadow:2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .pic1text{
+            top:650px;
+        }
+
+        .pic2text{
+            top:1300px;
+        }
+
+        .pic3text{
+            top:1980px;
+        }
+
+        
+        .songs-box{
+            display:none;
+            position:absolute;
+            width:500px;
+            padding:20px;
+
+            background:rgba(241,254,0,0.25);
+            backdrop-filter:blur(8px);
+
+            border-radius:20px;
+            box-shadow:0px 8px 18px rgb(0,0,0);
+
+            text-align:center;
+            color:black;
+            font-family:"Libre Baskerville", serif;
+        }
+
+        .songs-box audio{
+            width:100%;
+        }
+       
+        .video-box{
+    display:none;
+    position:absolute;
+
+    width:700px;
+    padding:15px;
+
+    background:rgba(241,254,0,0.25);
+    backdrop-filter: blur(8px);
+
+    border-radius:15px;
+    box-shadow:0px 8px 18px rgba(0,0,0,0.8);
+
+    text-align:center;
+}
+
+.video-box video{
+    width:650px;
+    height:450px;
+    border-radius:10px;
+}
+
+.video-close{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#c6a609;
+    color:white;
+}
+.video-btn{
+    background:#c6a609;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "Libre Baskerville", serif;
+    font-weight: bold;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.video-btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 10px 18px rgba(0,0,0,0.4);
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.php">Members</a>
+        <a href="albums.html">Albums</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="socials.html">Socials</a>
+    </div>
+
+
+    <!-- Album 1 -->
+    <img src="images/album1.png" class="pic1"
+         onclick="toggleSongs('songsBox')">
+
+    <div class="pic1text">
+        Limasawa Street<br>
+        2019
+    </div>
+
+    <div id="songsBox" class="songs-box"
+         style="left:550px; top:170px;">
+
+        <h2>Top 3 Songs</h2>
+
+       <p><b>1. Pagtingin</b></p>
+
+<audio controls>
+    <source src="Audios/Ben&Ben - Pagtingin.mp3" type="audio/mpeg">
+</audio>
+
+<br>
+
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Pagtingin.mp4',170)">
+▶ Watch Video
+</button>
+
+        <br><br>
+
+        <p><b>2. Araw-Araw</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Araw-Araw.mp3" type="audio/mpeg">
+        </audio>
+<br>
+
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Araw-Araw.mp4',170)">
+▶ Watch Video
+</button>
+
+        <br><br>
+
+        <p><b>3. Limasawa Street</b></p>
+        <audio controls>
+            <source src="Audios/Limasawa Street.mp3" type="audio/mpeg">
+        </audio>
+        <br>
+
+<button class="video-btn"
+onclick="openVideo('Videos/Limasawa Street.mp4',170)">
+▶ Watch Video
+</button>
+
+    </div>
+
+
+    <!-- Album 2 -->
+    <img src="images/album2.png" class="pic2"
+         onclick="toggleSongs('songbox2')">
+
+    <div class="pic2text">
+        Pebble House,<br>
+        Vol. 1: Kuwaderno<br>
+        2021
+    </div>
+
+    <div id="songbox2" class="songs-box"
+         style="left:550px; top:825px;">
+
+        <h2>Top 3 Songs</h2>
+
+        <p><b>1. Pasalubong</b></p>
+        <audio controls>
+            <source src="Audios/Pasalubong (feat. Moira Dela Torre),mp3.mp3" type="audio/mpeg">
+        </audio>
+
+         <br>
+
+<button class="video-btn"
+onclick="openVideo('Videos/Pasalubong (feat. Moira Dela Torre).mp4',825)">
+▶ Watch Video
+</button>
+<br><br>
+
+        <p><b>2. Magpahinga</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Magpahinga.mp3" type="audio/mpeg">
+        </audio>
+
+        <br>
+         
+
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Magpahinga.mp4',825)">
+▶ Watch Video
+</button>
+        <br><br>
+
+        <p><b>3. Upuan</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Upuan.mp3" type="audio/mpeg">
+        </audio>
+        <br>
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Upuan.mp4',825)">
+▶ Watch Video
+</button>
+        <br><br>
+
+    </div>
+
+
+    <!-- Album 3 -->
+    <img src="images/album3.png" class="pic3"
+         onclick="toggleSongs('songbox3')">
+
+    <div class="pic3text">
+        The Traveller Across<br>
+        Dimensions<br>
+        2024
+    </div>
+
+    <div id="songbox3" class="songs-box"
+         style="left:550px; top:1500px;">
+
+        <h2>Top 3 Songs</h2>
+
+        <p><b>1. Autumn</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Autumn.mp3" type="audio/mpeg">
+        </audio>
+
+        <br>
+
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Autumn.mp4',1500)">
+▶ Watch Video
+</button>
+        <br> <br>
+
+        <p><b>2. Could Be Something</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Could Be Something.mp3" type="audio/mpeg">
+        </audio>
+
+        <br>
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Could Be Something.mp4',1500)">
+▶ Watch Video
+</button>
+        <br>
+        <br>
+
+        <p><b>3. Triumph</b></p>
+        <audio controls>
+            <source src="Audios/Ben&Ben - Triumph.mp3" type="audio/mpeg">
+        </audio>
+    <br>
+<button class="video-btn"
+onclick="openVideo('Videos/Ben&Ben - Triumph.mp4',1500)">
+▶ Watch Video
+</button>   
+        <br><br>
+    </div>
+
+    <div id="videoBox" class="video-box">
+    <video id="videoPlayer" controls></video>
+    <br>
+    <button class="video-close" onclick="closeVideo()">Close</button>
+</div>
+
+ <script>
+
+function toggleSongs(id){
+    const box = document.getElementById(id);
+
+    if(box.style.display === "block"){
+        box.style.display = "none";
+    } else {
+        box.style.display = "block";
+    }
+}
+
+
+function openVideo(src, topPos){
+
+    const box = document.getElementById("videoBox");
+    const video = document.getElementById("videoPlayer");
+
+    video.src = src;
+
+    box.style.top = topPos + "px";
+    box.style.left = "1100px";
+
+    box.style.display = "block";
+
+    video.play();
+}
+
+
+function closeVideo(){
+
+    const box = document.getElementById("videoBox");
+    const video = document.getElementById("videoPlayer");
+
+    video.pause();
+    video.src = "";
+
+    box.style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
